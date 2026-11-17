@@ -133,10 +133,56 @@ section.three article{
 
 section.three div:nth-child(2){
     order:1;
+    gap: 1em 1em;
 
 }
 
 section.three div:nth-child(5){
     grid-area: 2 / 1 / span 2 / span 2 ;
+}
 
+
+/*using grid mapping*/ 
+
+section.four article{
+    display:grid;
+/*first step*/
+    grid-template-areas:
+    "nav cart"
+    "header header"
+    "main main"
+    "photo1 photo2"
+    "aside aside"
+    "footer footer";
+}
+/*second step*/
+
+section.four div:nth-child(1){grid-area: nav;}
+section.four div:nth-child(2){grid-area: cart;}
+section.four div:nth-child(3){grid-area: header;}
+section.four div:nth-child(4){grid-area: main;}
+section.four div:nth-child(5){grid-area: photo1;}
+section.four div:nth-child(6){grid-area: photo2;}
+section.four div:nth-child(7){grid-area: aside;}
+section.four div:nth-child(8){grid-area: footer;}
+
+@media screen and (min-width:720px){
+    /*to change the layout of the page all you have to do is redraw the map*/
+    grid-template-areas:
+    "nav nav nav"
+    "header header header"
+    "main main main"
+    "photo1 photo2 aside"
+    "footer footer footer";
+}
+
+@media screen and (min-width:900px){
+    section.four article{
+        grid-template-areas:
+        "nav nav nav cart"
+        "header header header header"
+        "aisde main main photo1"
+        "aside footer footer footer";
+
+    }
 }
