@@ -90,3 +90,53 @@ section.one article {
 
     grid-template-rows: 120px 120px;
 }
+
+section.two article{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows:120px;
+    grid-auto-flow:dense;
+}
+/*you can control the indavisual cells, or the children of the grid - to posistion or size them indavisualy*/
+
+section.two div:nth-child(1) {
+    color: rgb(26, 72, 20); 
+    grid-column-start:1;
+    grid-column-end:3;
+
+    grid-row-start:1;
+    grid-row-end:3;
+}
+
+section.two div:nth-child(2){
+    color:rgb(117, 3, 111);
+    grid-column-start:3;
+    grid-column-end:5;
+
+    grid-row-start:2;
+    grid-row-end:3;
+}
+
+section.two div:nth-child(6){
+    grid-column-start:1;
+    grid-column-end: span 4;
+
+}
+
+section.three article{
+    display:grid;
+    grid-auto-flow:dense;
+
+    grid-template-columns:1fr 2fr 1fr;
+    grid-auto-rows: 120px;
+}
+
+section.three div:nth-child(2){
+    order:1;
+
+}
+
+section.three div:nth-child(5){
+    grid-area: 2 / 1 / span 2 / span 2 ;
+
+}
